@@ -4,16 +4,72 @@ import { ChevronDown, Menu, X } from "lucide-react"
 import { useState } from "react"
 
 const navigationItems = [
-  { name: "Power Cables", hasDropdown: true },
-  { name: "Control Cables", hasDropdown: true },
-  { name: "Data Cables", hasDropdown: true },
-  { name: "House Wiring", hasDropdown: false },
-  { name: "Industrial Cables", hasDropdown: true },
-  { name: "Accessories", hasDropdown: true },
+  { 
+    name: "Petroleum Products", 
+    hasDropdown: true,
+    categories: [
+      "Fuel Management Systems",
+      "Fueling Equipment", 
+      "Tank Truck Equipment",
+      "Petroleum Storage Solutions",
+      "Pipeline Equipment"
+    ]
+  },
+  { 
+    name: "Electronics Products", 
+    hasDropdown: true,
+    categories: [
+      "Control Systems",
+      "Monitoring Equipment",
+      "Communication Devices",
+      "Safety Electronics",
+      "Industrial Automation"
+    ]
+  },
+  { 
+    name: "Power Cables", 
+    hasDropdown: true,
+    categories: [
+      "Low Voltage Cables",
+      "Medium Voltage Cables",
+      "High Voltage Cables",
+      "Flexible Power Cables"
+    ]
+  },
+  { 
+    name: "Control Cables", 
+    hasDropdown: true,
+    categories: [
+      "Instrumentation Cables",
+      "Signal Cables",
+      "Control Panel Wiring",
+      "Process Control Cables"
+    ]
+  },
+  { 
+    name: "Data Cables", 
+    hasDropdown: true,
+    categories: [
+      "Ethernet Cables",
+      "Fiber Optic Cables",
+      "Communication Cables",
+      "Network Infrastructure"
+    ]
+  },
+  { 
+    name: "Electrical Accessories", 
+    hasDropdown: true,
+    categories: [
+      "Cable Glands",
+      "Junction Boxes",
+      "Conduits & Fittings",
+      "Terminal Blocks"
+    ]
+  },
   { name: "Special Offers", hasDropdown: false },
 ]
 
-export function Navigation() {
+export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<number | null>(null)
 
@@ -40,15 +96,11 @@ export function Navigation() {
                 </button>
                 {item.hasDropdown && (
                   <div className="absolute top-full left-0 bg-white text-gray-900 shadow-lg rounded-md py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
-                      Category 1
-                    </a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
-                      Category 2
-                    </a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
-                      Category 3
-                    </a>
+                    {item.categories?.map((category, catIndex) => (
+                      <a key={catIndex} href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
+                        {category}
+                      </a>
+                    ))}
                   </div>
                 )}
               </div>
@@ -58,7 +110,7 @@ export function Navigation() {
 
         {/* Mobile Navigation Header */}
         <div className="lg:hidden flex items-center justify-between py-3">
-          <span className="text-lg font-medium">Categories</span>
+          <span className="text-lg font-medium">Products</span>
           <button
             onClick={toggleMobileMenu}
             className="p-2 hover:bg-orange-800 rounded-md transition-colors"
@@ -93,15 +145,11 @@ export function Navigation() {
                   
                   {item.hasDropdown && openDropdown === index && (
                     <div className="bg-orange-700 px-4 pb-2">
-                      <a href="#" className="block py-2 px-4 hover:bg-orange-600 rounded text-sm">
-                        Category 1
-                      </a>
-                      <a href="#" className="block py-2 px-4 hover:bg-orange-600 rounded text-sm">
-                        Category 2
-                      </a>
-                      <a href="#" className="block py-2 px-4 hover:bg-orange-600 rounded text-sm">
-                        Category 3
-                      </a>
+                      {item.categories?.map((category, catIndex) => (
+                        <a key={catIndex} href="#" className="block py-2 px-4 hover:bg-orange-600 rounded text-sm">
+                          {category}
+                        </a>
+                      ))}
                     </div>
                   )}
                 </div>
@@ -121,15 +169,11 @@ export function Navigation() {
                 </button>
                 {item.hasDropdown && (
                   <div className="absolute top-full left-0 bg-white text-gray-900 shadow-lg rounded-md py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
-                      Category 1
-                    </a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
-                      Category 2
-                    </a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
-                      Category 3
-                    </a>
+                    {item.categories?.map((category, catIndex) => (
+                      <a key={catIndex} href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
+                        {category}
+                      </a>
+                    ))}
                   </div>
                 )}
               </div>
