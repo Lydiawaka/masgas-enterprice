@@ -36,14 +36,14 @@ export function Header() {
   ]
 
   const handleWhatsAppClick = () => {
-    const whatsappNumber = "+254746056315" 
+    const whatsappNumber = "+254792780247" 
     const message = "Hello! I'm interested in your wire and cable products."
     const url = `https://wa.me/${whatsappNumber.replace("+", "")}?text=${encodeURIComponent(message)}`
     window.open(url, "_blank")
   }
 
   const handleCallClick = () => {
-    window.location.href = "tel:+254746056315"
+    window.location.href = "tel:+254792780247"
   }
 
   const handleSearch = () => {
