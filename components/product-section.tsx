@@ -20,7 +20,7 @@ const products: Product[] = [
     name: "Ventrose",
     category: "Pipe Fittings",
     priceRange: "KES 2,500 - 3,000",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+    image: "/images/Ventrose.jpeg",
     description: "High-quality ventrose coupling for secure pipe connections. Designed for durability and reliable performance in plumbing systems.",
     specifications: [
       "Material: High-grade PVC",
@@ -35,9 +35,9 @@ const products: Product[] = [
     id: 2,
     name: "External Filter",
     category: "Filtration",
-    priceRange: "KES 2,000 - 3,000",
-    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=400&h=300&fit=crop",
-    description: "External filtration system for clean water supply. Effective removal of impurities and contaminants for better water quality.",
+    priceRange: "KES 2000-3000",
+    image: "/images/External filter.jpeg",
+    description: "An external filter is typically made of high-quality optical glass or resin, designed to modify light entering a camera lens.",
     specifications: [
       "Filter type: Multi-stage",
       "Flow rate: 10-15 L/min",
@@ -52,7 +52,7 @@ const products: Product[] = [
     name: "63mm EF Coupler",
     category: "Pipe Fittings",
     priceRange: "KES 800 - 1,000",
-    image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=300&fit=crop",
+    image: "/images/Coupler.jpeg",
     description: "Precision-engineered 63mm electrofusion coupler for permanent pipe joints. Ensures leak-proof connections in water supply systems.",
     specifications: [
       "Size: 63mm diameter",
@@ -68,7 +68,7 @@ const products: Product[] = [
     name: "50mm/63mm EF Reducer",
     category: "Pipe Fittings",
     priceRange: "KES 3,000 - 3,500",
-    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop",
+    image: "/images/Reducer.jpeg",
     description: "Electrofusion reducer for connecting different pipe sizes. Professional-grade fitting for seamless pipe transitions.",
     specifications: [
       "Sizes: 50mm to 63mm",
@@ -81,17 +81,47 @@ const products: Product[] = [
   },
   {
     id: 5,
-    name: "110mm EF Termination Coupling",
+    name: "'1.5' Angle check valve",
     category: "Pipe Fittings",
-    priceRange: "KES 4,000 - 5,500",
-    image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=400&h=300&fit=crop",
-    description: "Large diameter electrofusion termination coupling for pipeline endings. Heavy-duty construction for industrial applications.",
+    priceRange: "KES 4,000 - 5,000",
+    image: "/images/Anglecheck valve.jpeg",
+    description: "A 1.5 angle check valve is typically made of durable zinc-plated cast iron with a brass seat and poppet for reliable backflow prevention",
     specifications: [
       "Size: 110mm diameter",
       "Type: Termination coupling",
       "Material: PE100",
       "Fusion time: 180 seconds",
       "Max pressure: 16 bar"
+    ],
+    inStock: true
+  },
+  {
+    id: 6,
+    name: "UPP® Termination 63 mm x 2 BSPT Male",
+    category: "Pipe Fittings",
+    priceRange: "KES 3,000-4,500",
+    image: "/images/Termination.jpeg",
+    description: "A durable, corrosion-resistant polypropylene connector for secure, watertight MDPE pipe-to-threaded system transitions",
+    specifications: [
+      "Material: Polypropylene",
+      "Type: MDPE to threaded connector",
+      "Features: Durable, corrosion-resistant",
+      "Seal: Watertight connection"
+    ],
+    inStock: true
+  },
+  {
+    id: 7,
+    name: "UPP® Electrofusion Elbow 45° 63 mm",
+    category: "Pipe Fittings",
+    priceRange: "KES 2,000 - 3,500",
+    image: "/images/Electrofusion.jpeg",
+    description: "High-density polyethylene (HDPE) fitting designed for reliable, leak-free connections in water, gas, and industrial piping systems, featuring a 45-degree bend.",
+    specifications: [
+      "Material: HDPE",
+      "Type: 45° bend fitting",
+      "Use: Water, gas, industrial pipes",
+      "Features: Leak-free, durable"
     ],
     inStock: true
   }
@@ -186,7 +216,7 @@ export default function MasgasProducts() {
               <img 
                 src={product.image} 
                 alt={product.name}
-                className="w-full h-48 object-cover rounded-t-lg"
+                className="max-h-full object-contain h-48 w-3xl"
               />
               
               <div className="p-6">
