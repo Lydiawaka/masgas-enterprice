@@ -124,6 +124,38 @@ const products: Product[] = [
       "Features: Leak-free, durable"
     ],
     inStock: true
+  },
+  {
+    id: 8,
+    name: "BMI 3 Inch NPT Galvanized Straight Coupling, 150#, UL/FM",
+    category: "Pipe Fittings",
+    priceRange: "KES 800 - 1000",
+    image: "/images/Coupling.jpeg",
+    description: "3' NPT galvanized straight coupling, 150# pressure, UL/FM certified, rust-resistant, malleable iron, durable.",
+    specifications: [
+        'Size: 3" NPT',
+        'Type: Straight coupling',
+        'Material: Galvanized malleable iron',
+        'Pressure Rating: 150#',
+        'Certifications: UL/FM certified',
+        'Features: Rust-resistant, durable'
+    ],
+    inStock: true
+  },
+  {
+    id: 9,
+    name: "Galvanised Malleable 90 deg Elbow Female / Female BSP Thread",
+    category: "Pipe Fittings",
+    priceRange: "KES 300 - 500",
+    image: "/images/Galvanised.jpeg",
+    description: "Galvanized malleable iron, 90-degree elbow, female BSP threads, durable.",
+    specifications: [
+      "Material: Galvanized malleable iron",
+      "Type: 90° elbow",
+      "Thread: Female BSP",
+      "Features: Durable, corrosion-resistant"
+    ],
+    inStock: true
   }
 ];
 

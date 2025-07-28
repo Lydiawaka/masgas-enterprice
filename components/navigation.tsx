@@ -5,65 +5,125 @@ import { useState } from "react"
 
 const navigationItems = [
   { 
-    name: "Petroleum Products", 
+    name: "Submersible Pumping", 
     hasDropdown: true,
     categories: [
-      "Fuel Management Systems",
-      "Fueling Equipment", 
+      "Residential Pumps",
+      "Commercial Pumps", 
+      "Agricultural Pumps",
+      "Industrial Pumps",
+      "Pump Accessories"
+    ]
+  },
+  { 
+    name: "EV Systems", 
+    hasDropdown: true,
+    categories: [
+      "EV Charging Stations",
+      "Charging Infrastructure",
+      "Fleet Management",
+      "Payment Systems",
+      "Installation Services"
+    ]
+  },
+  { 
+    name: "Car Wash Monitoring", 
+    hasDropdown: true,
+    categories: [
+      "Monitoring Systems",
+      "Control Panels",
+      "Sensors & Detectors",
+      "Data Analytics"
+    ]
+  },
+  { 
+    name: "Integrated Electrical Controls", 
+    hasDropdown: true,
+    categories: [
+      "Control Panels",
+      "Variable Frequency Drives",
+      "Motor Starters",
+      "Protection Devices"
+    ]
+  },
+  { 
+    name: "Fuel Management Systems", 
+    hasDropdown: true,
+    categories: [
+      "Fuel Monitoring",
+      "Tank Gauging",
+      "Leak Detection",
+      "Fuel Dispensers"
+    ]
+  },
+  { 
+    name: "Piping & Containment", 
+    hasDropdown: true,
+    categories: [
+      "Underground Piping",
+      "Secondary Containment",
+      "Fittings & Connections",
+      "Installation Hardware"
+    ]
+  },
+  { 
+    name: "Wire Management", 
+    hasDropdown: true,
+    categories: [
+      "Cable Management",
+      "Wire Protection",
+      "Conduit Systems",
+      "Junction Boxes"
+    ]
+  },
+  { 
+    name: "Service Station Hardware", 
+    hasDropdown: true,
+    categories: [
+      "Dispensers",
+      "Nozzles & Hoses",
+      "Safety Equipment",
+      "Maintenance Tools"
+    ]
+  },
+  { 
+    name: "Dispensing", 
+    hasDropdown: true,
+    categories: [
+      "Fuel Dispensers",
+      "DEF Equipment",
+      "AdBlue Systems",
+      "Dispenser Parts"
+    ]
+  },
+  { 
+    name: "Transport", 
+    hasDropdown: true,
+    categories: [
       "Tank Truck Equipment",
-      "Petroleum Storage Solutions",
-      "Pipeline Equipment"
+      "Loading Arms",
+      "Transfer Systems",
+      "Safety Equipment"
     ]
   },
   { 
-    name: "Electronics Products", 
+    name: "System Solutions", 
     hasDropdown: true,
     categories: [
-      "Control Systems",
+      "Complete Systems",
+      "Custom Solutions",
+      "Integration Services",
+      "Technical Support"
+    ]
+  },
+  { 
+    name: "Corrosion Control", 
+    hasDropdown: true,
+    categories: [
+      "Corrosion Control™ System",
+      "Corrosion Control Components",
       "Monitoring Equipment",
-      "Communication Devices",
-      "Safety Electronics",
-      "Industrial Automation"
-    ]
-  },
-  { 
-    name: "Power Cables", 
-    hasDropdown: true,
-    categories: [
-      "Low Voltage Cables",
-      "Medium Voltage Cables",
-      "High Voltage Cables",
-      "Flexible Power Cables"
-    ]
-  },
-  { 
-    name: "Control Cables", 
-    hasDropdown: true,
-    categories: [
-      "Instrumentation Cables",
-      "Signal Cables",
-      "Control Panel Wiring",
-      "Process Control Cables"
-    ]
-  },
-  { 
-    name: "Data Cables", 
-    hasDropdown: true,
-    categories: [
-      "Ethernet Cables",
-      "Fiber Optic Cables",
-      "Communication Cables",
-      "Network Infrastructure"
-    ]
-  },
-  { 
-    name: "Electrical Accessories", 
-    hasDropdown: true,
-    categories: [
-      "Cable Glands",
-      "Junction Boxes",
-      "Conduits & Fittings",
-      "Terminal Blocks"
+      "Protection Systems"
     ]
   },
   { name: "Special Offers", hasDropdown: false },

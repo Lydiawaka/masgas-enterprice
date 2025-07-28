@@ -1,18 +1,18 @@
 "use client"
-import { MessageCircle, Phone, Mail, MapPin } from "lucide-react"
+import { MessageCircle, Phone, Mail } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const handleWhatsAppClick = () => {
-    const whatsappNumber = "+254746056315" 
+    const whatsappNumber = "+254792780247" 
     const message = "Hello! I'm interested in your wire and cable products."
     const url = `https://wa.me/${whatsappNumber.replace("+", "")}?text=${encodeURIComponent(message)}`
     window.open(url, "_blank")
   }
 
   const handleCallClick = () => {
-    window.location.href = "tel:+254746056315"
+    window.location.href = "tel:+254792780247"
   }
 
   const handleEmailClick = () => {
@@ -20,17 +20,17 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-slate-900 text-white mt-8 sm:mt-12 lg:mt-16">
+    <footer className="bg-slate-900 flex items-center justify-center text-white mt-8 sm:mt-12 lg:mt-16">
       <div className="container mx-auto px-4 py-8 sm:py-10 lg:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-red-500">MAGAS</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-red-500">MASGAS</h3>
             <p className="text-gray-300 mb-4 text-sm sm:text-base leading-relaxed">
               Your trusted partner for premium wires and cables. Quality products, reliable service, and competitive
               prices for all your electrical needs.
             </p>
-            <div className="flex space-x-3 sm:space-x-4">
+            <div className="flex space-x-3 sm:space-x-4 ">
               <button 
                 onClick={handleWhatsAppClick}
                 className="bg-green-600 hover:bg-green-700 transition-colors rounded-full p-2 sm:p-2.5"
@@ -125,7 +125,7 @@ export function Footer() {
                 className="flex items-center hover:text-white transition-colors w-full text-left"
               >
                 <Phone className="h-4 w-4 mr-2 flex-shrink-0" />
-                <span>+254 746 056 315</span>
+                <span>+254 792 780247</span>
               </button>
               <button 
                 onClick={handleWhatsAppClick}
@@ -141,14 +141,7 @@ export function Footer() {
                 <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
                 <span>info@magas.co.ke</span>
               </button>
-              <div className="flex items-start">
-                <MapPin className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" />
-                <span>
-                  Industrial Area, Nairobi
-                  <br />
-                  Kenya
-                </span>
-              </div>
+              
             </div>
           </div>
         </div>
