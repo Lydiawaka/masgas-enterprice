@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Masgas | Quality Pipe Fittings & Irrigation Solutions",
+  title: "MasgasEnterprise | Quality Pipe Fittings & Irrigation Solutions",
   description: "Masgas Enterprise offers high-quality pipe fittings, filtration systems, and irrigation solutions in Kenya. Order via WhatsApp.",
   keywords: ["pipe fittings", "irrigation", "masgas", "plumbing", "hardware", "kenya", "filtration"],
   openGraph: {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Your trusted partner for quality pipe fittings and irrigation solutions in Kenya.",
     type: "website",
     locale: "en_KE",
-    siteName: "Masgas Enterprise",
+    siteName: "MasgasEnterprise",
   },
 };
 
@@ -34,8 +34,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Masgas Enterprise",
-    "url": "https://masgas.com", 
-    "logo": "https://masgas.com/logo.png", 
+    "url": "https://masgasenterprise.com", 
+    "logo": "https://masgasenterprise.com/logo.png", 
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+254792780247",

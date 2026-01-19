@@ -22,9 +22,9 @@ export function Footer() {
   return (
     <footer className="bg-slate-900 flex items-center justify-center text-white mt-8 sm:mt-12 lg:mt-16">
       <div className="container mx-auto px-4 py-8 sm:py-10 lg:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
-          <div className="sm:col-span-2 lg:col-span-1">
+          <div className="col-span-2 lg:col-span-1">
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-red-500">MASGAS</h3>
             <p className="text-gray-300 mb-4 text-sm sm:text-base leading-relaxed">
               Your trusted partner for premium wires and cables. Quality products, reliable service, and competitive
@@ -117,26 +117,26 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start">
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Contact Info</h4>
-            <div className="space-y-3 text-gray-300 text-sm sm:text-base">
+            <div className="space-y-3 text-gray-300 text-sm sm:text-base w-full flex flex-col items-center lg:items-start">
               <button 
                 onClick={handleCallClick}
-                className="flex items-center hover:text-white transition-colors w-full text-left"
+                className="flex items-center justify-center lg:justify-start hover:text-white transition-colors w-full lg:w-auto text-left"
               >
                 <Phone className="h-4 w-4 mr-2 flex-shrink-0" />
                 <span>+254 792 780247</span>
               </button>
               <button 
                 onClick={handleWhatsAppClick}
-                className="flex items-center hover:text-white transition-colors w-full text-left"
+                className="flex items-center justify-center lg:justify-start hover:text-white transition-colors w-full lg:w-auto text-left"
               >
                 <MessageCircle className="h-4 w-4 mr-2 flex-shrink-0" />
                 <span>WhatsApp Orders</span>
               </button>
               <button 
                 onClick={handleEmailClick}
-                className="flex items-center hover:text-white transition-colors w-full text-left"
+                className="flex items-center justify-center lg:justify-start hover:text-white transition-colors w-full lg:w-auto text-left"
               >
                 <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
                 <span>info@magas.co.ke</span>

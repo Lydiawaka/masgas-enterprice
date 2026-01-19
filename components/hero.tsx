@@ -62,7 +62,7 @@ const MasgasHeroSection: React.FC = () => {
   const currentSlideData = slides[currentSlide];
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative min-h-[600px] lg:h-screen overflow-hidden flex flex-col justify-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <div 
@@ -81,10 +81,10 @@ const MasgasHeroSection: React.FC = () => {
             <div className="space-y-8">
               {/* Brand */}
               <div>
-                <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                <h1 className="text-2xl md:text-4xl font-bold text-white mb-2">
                   MASGAS
                 </h1>
-                <p className="text-lg text-blue-200">
+                <p className="text-sm md:text-lg text-blue-200">
                   Petroleum Equipment & Electricals
                 </p>
               </div>
@@ -92,21 +92,21 @@ const MasgasHeroSection: React.FC = () => {
               {/* Main Content */}
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
+                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-2 md:mb-4">
                     {currentSlideData.title}
                   </h2>
-                  <h3 className="text-xl md:text-2xl text-blue-300 font-medium mb-6">
+                  <h3 className="text-lg md:text-2xl text-blue-300 font-medium mb-4 md:mb-6">
                     {currentSlideData.subtitle}
                   </h3>
                 </div>
                 
-                <p className="text-lg text-gray-200 leading-relaxed max-w-xl">
+                <p className="text-sm md:text-lg text-gray-200 leading-relaxed max-w-xl">
                   {currentSlideData.description}
                 </p>
 
                 {/* CTA Button */}
                 <div className="pt-4">
-                  <button className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
+                  <button className="group bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 hover:scale-105 shadow-lg">
                     <span className="flex items-center gap-2">
                       {currentSlideData.cta}
                       <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

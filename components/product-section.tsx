@@ -65,15 +65,15 @@ export default function MasgasProducts({ initialProducts = [] }: MasgasProductsP
                 <img
                   src={selectedProduct.image_url || '/placeholder.png'}
                   alt={selectedProduct.name}
-                  className="w-full h-96 object-cover rounded-lg"
+                  className="w-full h-64 md:h-96 object-cover rounded-lg"
                 />
               </div>
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 <div>
                   <span className="text-blue-600 text-sm font-medium">
                     {selectedProduct.category}
                   </span>
-                  <h1 className="text-3xl font-bold text-gray-900 mt-2">
+                  <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mt-2">
                     {selectedProduct.name}
                   </h1>
                 </div>
@@ -123,7 +123,7 @@ export default function MasgasProducts({ initialProducts = [] }: MasgasProductsP
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
           {products.map((product) => (
             <div
               key={product.id}
@@ -135,37 +135,37 @@ export default function MasgasProducts({ initialProducts = [] }: MasgasProductsP
                 className="max-h-full object-contain h-48 w-3xl"
               />
 
-              <div className="p-6">
+              <div className="p-3 md:p-6">
                 <div className="mb-2">
                   <span className="text-blue-600 text-sm font-medium">
                     {product.category}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-sm md:text-xl font-bold text-gray-900 mb-2 line-clamp-2">
                   {product.name}
                 </h3>
-                <p className="text-gray-600 mb-4 text-sm">
+                <p className="text-gray-600 mb-4 text-xs md:text-sm line-clamp-2">
                   {product.description}
                 </p>
 
                 <div className="mb-4">
-                  <span className="text-xl font-bold text-blue-600">
+                  <span className="text-lg md:text-xl font-bold text-blue-600">
                     KES {product.price}
                   </span>
                 </div>
 
-                <div className="flex space-x-3">
+                <div className="flex flex-col sm:flex-row gap-2 sm:space-x-3">
                   <button
                     onClick={() => setSelectedProduct(product)}
-                    className="flex-1 bg-gray-100 text-gray-800 px-4 py-2 rounded hover:bg-gray-200 transition-colors text-center"
+                    className="flex-1 bg-gray-100 text-gray-800 px-2 py-2 rounded hover:bg-gray-200 transition-colors text-center text-xs md:text-base whitespace-nowrap"
                   >
                     View Details
                   </button>
                   <button
                     onClick={() => orderViaWhatsApp(product)}
-                    className="flex-1 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors flex items-center justify-center space-x-2"
+                    className="flex-1 bg-green-600 text-white px-2 py-2 rounded hover:bg-green-700 transition-colors flex items-center justify-center space-x-1 sm:space-x-2 text-xs md:text-base"
                   >
-                    <MessageCircle className="w-4 h-4" />
+                    <MessageCircle className="w-3 h-3 md:w-4 md:h-4" />
                     <span>Order</span>
                   </button>
                 </div>
