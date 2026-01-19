@@ -31,3 +31,19 @@ export async function getProducts(): Promise<Product[]> {
     return []
   }
 }
+
+export async function searchProducts(query: string): Promise<Product[]> {
+  try {
+    const searchTerm = `%${query}%`
+    const products = await sql`
+      SELECT * FROM products 
+      WHERE name ILIKE ${searchTerm} 
+      OR description ILIKE ${searchTerm}
+      ORDER BY created_at DESC
+    `
+    return products as Product[]
+  } catch (error) {
+    console.error("Error searching products:", error)
+    return []
+  }
+}

@@ -3,23 +3,26 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, ArrowLeft } from 'lucide-react';
 
-interface Product {
-  id: number;
-  name: string;
-  category: string;
-  price: number;
-  stock: number;
-  status: string;
-  image_url: string;
-  description: string;
+import type { Product } from '@/lib/db';
+
+// Removed local Product interface to avoid conflicts and ensure type safety across the app.
+
+
+interface MasgasProductsProps {
+  initialProducts?: Product[];
 }
 
-export default function MasgasProducts() {
-  const [products, setProducts] = useState<Product[]>([]);
+export default function MasgasProducts({ initialProducts = [] }: MasgasProductsProps) {
+  const [products, setProducts] = useState<Product[]>(initialProducts);
+  const [loading, setLoading] = useState(initialProducts.length === 0);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  // Fetch products from API
+  // Fetch products from API if no initial products provided
   useEffect(() => {
+    if (initialProducts.length > 0) {
+      return; 
+    }
+
     async function fetchProducts() {
       try {
         const res = await fetch('/api/products');
@@ -27,10 +30,12 @@ export default function MasgasProducts() {
         setProducts(data);
       } catch (error) {
         console.error('Error fetching products:', error);
+      } finally {
+        setLoading(false);
       }
     }
     fetchProducts();
-  }, []);
+  }, [initialProducts]);
 
   // WhatsApp order
   const orderViaWhatsApp = (product: Product) => {
@@ -107,7 +112,7 @@ export default function MasgasProducts() {
     );
   }
 
-  // ✅ Product List Page
+  // Product List Page
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
@@ -168,8 +173,14 @@ export default function MasgasProducts() {
             </div>
           ))}
 
-          {products.length === 0 && (
-            <p className="text-center text-gray-500 col-span-3">
+          {loading && (
+            <div className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-center items-center py-20">
+              <div className="animate-spin rounded-full h-12 w-12 border-4 border-blue-200 border-t-blue-600"></div>
+            </div>
+          )}
+
+          {!loading && products.length === 0 && (
+            <p className="text-center text-gray-500 col-span-1 md:col-span-2 lg:col-span-3">
               No products available. Please check back later.
             </p>
           )}

@@ -1,9 +1,17 @@
 import { NextResponse } from "next/server"
-import { getProducts } from "@/lib/db"
+import { getProducts, searchProducts } from "@/lib/db"
 
-export async function GET() {
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
+  const query = searchParams.get('search')
+
   try {
-    const products = await getProducts()
+    let products
+    if (query) {
+      products = await searchProducts(query)
+    } else {
+      products = await getProducts()
+    }
     return NextResponse.json(products)
   } catch (error) {
     console.error("Error fetching products:", error)

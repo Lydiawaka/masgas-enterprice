@@ -3,37 +3,14 @@
 import { Search, User, MessageCircle, Phone, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import { Product } from "@/lib/db"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
-  const [searchResults, setSearchResults] = useState<string[]>([])
+  const [searchResults, setSearchResults] = useState<Product[]>([])
   const [isSearching, setIsSearching] = useState(false)
   const [showResults, setShowResults] = useState(false)
-
-  // Mock product data - replace with your actual product data
-  const mockProducts = [
-    'Electric Cables 2.5mm',
-    'Wire Strippers',
-    'Circuit Breakers',
-    'Electrical Conduits',
-    'Junction Boxes',
-    'Cable Glands',
-    'Petroleum Transfer Pumps',
-    'Fuel Dispensers',
-    'Tank Gauging Systems',
-    'Electrical Panels',
-    'Motor Control Centers',
-    'Transformers',
-    'Underground Cables',
-    'Overhead Lines',
-    'Safety Equipment',
-    'Control Cables',
-    'Power Cables',
-    'Armoured Cables',
-    'Flexible Cables',
-    'Submersible Pumps'
-  ]
 
   const handleWhatsAppClick = () => {
     const whatsappNumber = "+254792780247" 
@@ -46,26 +23,23 @@ export function Header() {
     window.location.href = "tel:+254792780247"
   }
 
-  const handleSearch = () => {
+  const handleSearch = async () => {
     if (!searchTerm.trim()) return
     
     setIsSearching(true)
     setShowResults(true)
     
-    // Simulate API call delay
-    setTimeout(() => {
-      try {
-        const filteredResults: string[] = mockProducts.filter((product: string) =>
-          product.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-        setSearchResults(filteredResults)
-      } catch (error) {
-        console.error('Search error:', error)
-        setSearchResults([])
-      } finally {
-        setIsSearching(false)
-      }
-    }, 300)
+    try {
+      const response = await fetch(`/api/products?search=${encodeURIComponent(searchTerm)}`)
+      if (!response.ok) throw new Error('Failed to fetch')
+      const data = await response.json()
+      setSearchResults(data)
+    } catch (error) {
+      console.error('Search error:', error)
+      setSearchResults([])
+    } finally {
+      setIsSearching(false)
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,14 +58,14 @@ export function Header() {
     }
   }
 
-  const handleProductSelect = (product: string) => {
+  const handleProductSelect = (product: Product) => {
     // Handle product selection - you can navigate to product page or add to cart
-    setSearchTerm(product)
+    setSearchTerm(product.name)
     setShowResults(false)
     // Example: navigate to product page or trigger product action
     console.log('Selected product:', product)
     // You can add navigation logic here:
-    // router.push(`/products/${encodeURIComponent(product)}`)
+    // router.push(`/products/${product.id}`)
   }
 
   const clearSearch = () => {
@@ -179,7 +153,7 @@ export function Header() {
                         >
                           <div className="flex items-center">
                             <Search className="h-4 w-4 text-gray-400 mr-3 flex-shrink-0" />
-                            <span className="text-gray-800 text-sm">{product}</span>
+                            <span className="text-gray-800 text-sm">{product.name}</span>
                           </div>
                         </li>
                       ))}
@@ -287,7 +261,7 @@ export function Header() {
                       >
                         <div className="flex items-center">
                           <Search className="h-4 w-4 text-gray-400 mr-3 flex-shrink-0" />
-                          <span className="text-gray-800 text-sm">{product}</span>
+                          <span className="text-gray-800 text-sm">{product.name}</span>
                         </div>
                       </li>
                     ))}
