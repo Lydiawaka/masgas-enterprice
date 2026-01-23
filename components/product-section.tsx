@@ -5,7 +5,6 @@ import { MessageCircle, ArrowLeft } from 'lucide-react';
 
 import type { Product } from '@/lib/db';
 
-// Removed local Product interface to avoid conflicts and ensure type safety across the app.
 
 
 interface MasgasProductsProps {
@@ -79,10 +78,11 @@ export default function MasgasProducts({ initialProducts = [] }: MasgasProductsP
                 </div>
 
                 <div>
-                  <span className="text-3xl font-bold text-blue-600">
-                    KES {selectedProduct.price}
-                  </span>
+                  
                   <div className="mt-2">
+                    {/* <span className="text-3xl font-bold text-blue-600">
+                    KES {selectedProduct.price}
+                  </span> */}
                     {selectedProduct.stock > 0 ? (
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
                         In Stock
@@ -148,11 +148,11 @@ export default function MasgasProducts({ initialProducts = [] }: MasgasProductsP
                   {product.description}
                 </p>
 
-                <div className="mb-4">
+                {/* <div className="mb-4">
                   <span className="text-lg md:text-xl font-bold text-blue-600">
                     KES {product.price}
                   </span>
-                </div>
+                </div> */}
 
                 <div className="flex flex-col sm:flex-row gap-2 sm:space-x-3">
                   <button

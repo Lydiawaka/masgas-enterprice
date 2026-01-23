@@ -94,7 +94,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex flex-col items-start">
             <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-red-500">
-              MAGAS ENTERPRISES
+              MASGAS ENTERPRISES
             </h1>
             <p className="text-xs sm:text-sm text-gray-200 mt-1 hidden sm:block">
               Petroleum Equipments & Electricals
